@@ -1,4 +1,5 @@
 var express = require('express');
+require('dotenv').config()
 var app = express();
 const mongoose = require("mongoose")
 const AllRoute = require("./src/routes/allroute")
@@ -15,12 +16,12 @@ app.get('/', function (req, res) {
 });
 
 app.use(express.json())
-app.use("/api/", AllRoute)
+app.use("/api/", AllRoute) 
 
 const url = "mongodb://localhost:27017/flowersMarket"
 
 const port = 3001
-mongoose.connect(url)
+mongoose.connect(`${process.env.DB}`)
 app.listen(port, function () {
   console.log(`Example app listening on port ${port} on http://localhost:${port}`);
 });
