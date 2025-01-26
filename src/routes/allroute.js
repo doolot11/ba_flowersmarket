@@ -27,6 +27,7 @@ const Image = require("./image")
 const Banner = require("./banner")
 const Order = require("./order")
 const Address = require("./address")
+const Profile = require("./profile")
 
 router.use("/user", User)
 router.use("/post", Post)
@@ -35,5 +36,6 @@ router.use("/image", Image)
 router.use("/banner", Banner)
 router.use("/order", Order)
 router.use("/address", Address)
+router.use("/profile", Profile)
 
 module.exports = router

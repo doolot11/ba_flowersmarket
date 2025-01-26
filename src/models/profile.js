@@ -9,6 +9,7 @@ const busProfileSchema = new Schema({
     avatar: { type: String, default: "" },
     description: { type: String, default: "" },
     urlShop: { type: String, default: "" },
+    isAdSlider: { type: Boolean, default: false },
     userId: { type: Schema.Types.ObjectId, ref: "user", require: true },
     adressShopIds: [{ type: Schema.Types.ObjectId, ref: "addressShop" }],
     orderIds: [{ type: Schema.Types.ObjectId, ref: "order" }],

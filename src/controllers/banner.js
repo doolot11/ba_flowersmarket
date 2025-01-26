@@ -5,7 +5,7 @@ class Banner {
         try {
             const { title, startDate, endDate, description, productIds, image, url } = req.body
 
-            const response = await bannerModel.create({ title, startDate, endDate, description, productIds, image,url })
+            const response = await bannerModel.create({ title, startDate, endDate, description, productIds, image, url })
             await res.json({ message: "Баннер успешно создано!", ...response })
 
         } catch (error) {
@@ -14,9 +14,9 @@ class Banner {
     }
     async updateBanner(req, res) {
         try {
-            const { title, startDate, endDate, description, productIds, image, _id,url } = req.body
+            const { title, startDate, endDate, description, productIds, image, _id, url } = req.body
 
-            const response = await bannerModel.findByIdAndUpdate(_id, { title, startDate, endDate, description, productIds, image ,url})
+            const response = await bannerModel.findByIdAndUpdate(_id, { title, startDate, endDate, description, productIds, image, url })
             await res.json({ message: "Баннер успешно создано!", ...response })
 
         } catch (error) {
@@ -47,6 +47,14 @@ class Banner {
 
         } catch (error) {
             return res.status(400).json({ message: "Произашло ошибка при получение баннеры!" })
+        }
+    }
+
+    async getShopListToAds(req, res) {
+        try {
+
+        } catch (error) {
+
         }
     }
 }

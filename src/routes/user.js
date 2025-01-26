@@ -45,5 +45,6 @@ const router = new Router()
 
 router.post("/signup", User.SignUp)
 router.post("/signin", User.SignIn)
+router.post("/google-auth", User.GoogleAuth)
 
 module.exports = router
